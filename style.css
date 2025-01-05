@@ -21,6 +21,14 @@ header {
 }
 
 /* Hamburger-Icon */
+.menu-icon {
+    font-size: 30px; /* Größe der Striche */
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding-left: 15px;
+    z-index: 1001; /* Über dem Menü platzieren */
+}
+
 /* Das Seitenmenü */
 .menu {
     position: fixed;
@@ -48,23 +56,6 @@ header {
     transition: left 0.3s ease, opacity 0.3s ease; /* Nur die Eigenschaften, die wir ändern möchten */
 }
 
-/* Hamburger-Icon */
-.menu-icon {
-    font-size: 30px; /* Größe der Striche */
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    padding-left: 15px;
-    z-index: 1001; /* Über dem Menü platzieren */
-}
-
-.menu.open .menu-icon {
-    font-size: 30px; /* Größe der Striche */
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    padding-left: 15px;
-    z-index: 1001; /* Über dem Menü platzieren */
-}
-
 /* Menü-Elemente */
 .menu ul {
     list-style: none;
@@ -78,6 +69,51 @@ header {
     padding: 10px 0;
 }
 
+/* Für Dropdown-Menü */
+.menu li.dropdown {
+    position: relative;
+}
+
+/* Pfeil vor dem "Künstler"-Text */
+.arrow {
+    display: inline-block;
+    margin-right: 10px; /* Pfeil nach links verschieben */
+    transition: transform 0.3s ease; /* Animation für den Pfeil */
+}
+
+/* Dropdown-Menü */
+.dropdown-menu {
+    display: none; /* Standardmäßig ausgeblendet */
+    position: relative;
+    background-color: #f9f9f900;
+    border: 1px solid #dddddd00;
+    width: 200px;
+}
+
+/* Das Dropdown-Menü sichtbar machen, wenn das Elternmenü die Klasse "open" hat */
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+/* Wenn das Dropdown geöffnet ist, den Pfeil nach unten drehen */
+.dropdown.open .arrow {
+    transform: rotate(90deg); /* Pfeil nach unten drehen */
+}
+
+/* Links im Dropdown-Menü */
+.dropdown-menu li a {
+    padding: 1px;
+    display: block;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #55555500;
+}
+
+/* Links im Menü */
 .menu ul li a {
     text-decoration: none;
     color: rgb(0, 0, 0);
@@ -86,7 +122,7 @@ header {
 }
 
 .menu ul li a:hover {
-    background-color: #555;
+    background-color: #55555500;
 }
 
 /* Für Mobilgeräte */
@@ -113,3 +149,7 @@ header {
         padding: 0 15px;
     }
 }
+
+.ober-begriff {
+    font-size: 30px;
+} 
